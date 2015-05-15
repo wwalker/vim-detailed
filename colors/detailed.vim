@@ -479,7 +479,7 @@ endfun
 " For now, force darkness. If you're a big fan of white bg's, let me know, and
 " we can collaborate on a solution.
 set bg=dark
-call s:fgbg('Normal', 'gray254', 'gray232')
+call s:fgbg('Normal', 'gray254', 'basic8_black')
 
 " Basic/Default-like Palette {{{
 hi SpecialKey     term=bold ctermfg=81 guifg=Cyan
@@ -554,7 +554,8 @@ fun! s:detailed_colors()
   call s:underline_fgbg('MatchParen', 'gray255', 'gray243')
 
   " For :set colorcolumn=80
-  call s:fgbg('ColorColumn', 'gray254', 'gray233')
+  "call s:fgbg('ColorColumn', 'gray254', 'gray233')
+  call s:fg('ColorColumn', 'gray254')
 
   " For the Syntastic and quickfixsigns plugins:
   call s:bg('SignColumn', 'gray233')
@@ -598,10 +599,13 @@ fun! s:detailed_colors()
 
   call s:fg('detailedInstanceVariable', 'blue75')
 
-  call s:fgbg('detailedString', 'purple125', 'gray233')
-  call s:fgbg('detailedInterpolatedString', 'purple126', 'gray233')
+  "call s:fgbg('detailedString', 'purple125', 'gray233')
+  call s:fg('detailedString', 'purple125')
+  "call s:fgbg('detailedInterpolatedString', 'purple126', 'gray233')
+  call s:fg('detailedInterpolatedString', 'purple126')
   call s:bold_fgbg('detailedExecutedString', 'green34', 'purple53')
-  call s:fgbg('detailedRawString', 'red160', 'gray233')
+  "call s:fgbg('detailedRawString', 'red160', 'gray233')
+  call s:fg('detailedRawString', 'red160')
   call s:fg('detailedStringDelimiter', 'blue33')
   call s:fg('detailedInterpolationDelimiter', 'gray244')
 
@@ -613,7 +617,8 @@ fun! s:detailed_colors()
   call s:fg('detailedRegexpAnchor', 'purple90')
   call s:fg('detailedRegexpDot', 'green34')
   call s:bold_fg('detailedRegexpDelimiter', 'red88')
-  call s:fgbg('rubyRegexp', 'red160', 'gray233')
+  "call s:fgbg('rubyRegexp', 'red160', 'gray233')
+  call s:fg('rubyRegexp', 'red160')
   call s:fg('detailedASCIICode', 'green71')
 
   call s:fg('detailedPseudoVariable', 'purple125')
@@ -700,7 +705,7 @@ endfun
 
 fun! s:go_syntax_and_highlights()
 
-  " hi link goBlock detailedBlock
+  hi link goBlock detailedBlock
   hi link goDirective detailedDirective
   hi link goDeclaration detailedDeclaration
   hi link goDeclType detailedDeclType
@@ -709,6 +714,51 @@ fun! s:go_syntax_and_highlights()
   hi link goRawString detailedRawString
   hi link goImaginary detailedImaginary
   hi link goSpaceError BadWhitespace
+
+  hi link goString detailedString
+  hi link goBoolean detailedBoolean
+  hi link goTodo detailedTodo
+  hi link goRepeat detailedRepeat
+  hi link goConditional Conditional
+  hi link goComment Comment
+  hi link goFunction detailedFunction
+  hi link goMethod detailedFunction
+  hi link goStruct Type
+"  hi link goLabel
+"  hi link goType
+"  hi link goSignedInts
+"  hi link goUnsignedInts
+"  hi link goFloats
+"  hi link goComplexes
+"  hi link goBuiltins
+"  hi link goEscapeOctal
+"  hi link goEscapeC
+"  hi link goEscapeX
+"  hi link goEscapeU
+"  hi link goEscapeBigU
+"  hi link goEscapeError
+"  hi link goFormatSpecifier
+"  hi link goCharacter
+"  hi link goBlock
+"  hi link goParen
+"  hi link goDecimalInt
+"  hi link goHexadecimalInt
+"  hi link goOctalInt
+"  hi link goOctalError
+"  hi link goFloat
+"  hi link goExtraType
+"  hi link goOperator
+"  hi link goCommentGroup
+"  hi link Spell
+"  hi link goStringGroup
+"  hi link goCharacterGroup
+
+"  hi link goBuildArch
+"  hi link goBuildComment
+"  hi link goBuildDirective
+"  hi link goBuildOs
+"  hi link goStructDef
+
 endfun
 
 fun! s:vim_syntax_and_highlights()
