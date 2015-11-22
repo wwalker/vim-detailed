@@ -518,7 +518,7 @@ hi Ignore         ctermfg=0 guifg=bg
 hi Error          term=reverse ctermfg=15 ctermbg=9 guifg=White guibg=Red
 hi Todo           term=standout ctermfg=0 ctermbg=11 guifg=Blue guibg=Yellow
 
-call s:fg('Comment', 'gray242') " In my books, comments should be quiet.
+call s:fg('Comment', 'gray245') " In my books, comments should be quiet.
 " }}}
 
 " Generic links {{{
@@ -600,7 +600,7 @@ fun! s:detailed_colors()
   call s:fg('detailedInstanceVariable', 'blue75')
 
   "call s:fgbg('detailedString', 'purple125', 'gray233')
-  call s:fg('detailedString', 'purple125')
+  call s:fg('detailedString', 'red161')
   "call s:fgbg('detailedInterpolatedString', 'purple126', 'gray233')
   call s:fg('detailedInterpolatedString', 'purple126')
   call s:bold_fgbg('detailedExecutedString', 'green34', 'purple53')
@@ -621,7 +621,7 @@ fun! s:detailed_colors()
   call s:fg('rubyRegexp', 'red160')
   call s:fg('detailedASCIICode', 'green71')
 
-  call s:fg('detailedPseudoVariable', 'purple125')
+  call s:fg('detailedPseudoVariable', 'red161')
   call s:fg('detailedInteger', 'purple134')
   call s:fg('detailedFloat', 'purple132')
   call s:bold_fg('detailedImaginary', 'purple139')
@@ -679,9 +679,9 @@ endfun
 
 fun! s:diff_syntax_and_highlights()
   " vimdiff uses Diff*
-  call s:bg('DiffChange', 'gray240')
+  call s:bg('DiffChange', 'gray244')
   call s:bg('DiffText', 'gray232')
-  call s:bg('DiffAdd', 'green23')
+  call s:bg('DiffAdd', 'green28')
   call s:bg('DiffDelete', 'yellow58')
   " ft=diff syntax uses diff*
   call s:fg('diffAdded', 'green34')
